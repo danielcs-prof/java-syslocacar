@@ -1,6 +1,7 @@
 package edu.syslocacar.controller;
 
 import edu.syslocacar.MainApp;
+import edu.syslocacar.model.services.VeiculoServices;
 import edu.syslocacar.utils.Alerta;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,12 +45,13 @@ public class MainController implements Initializable {
     @FXML
     private MenuItem menuItemAbout;
 
+    //******************************************************************************************************************
     // INITIALIZER
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-
+    //******************************************************************************************************************
     // TRATAMENTO DE EVENTOS
     @FXML
     public void onCadastroVeiculoAction(){
@@ -73,16 +75,19 @@ public class MainController implements Initializable {
         System.out.println("menu About");
         Alerta.exibirAlerta("SYSLocaCar","About","SYSLocaCar V 1.0", Alert.AlertType.INFORMATION);
     }
+    //******************************************************************************************************************
     // CARREGAMENTO DA VIEW
     public void loadView(String pathFXML){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             VBox vBox = fxmlLoader.load(new FileInputStream(pathFXML));
-            //Scene scene = MainApp.getScene();
-            //Node menuBar = vBoxMain.getChildren().get(0);
             vBoxMain.getChildren().clear();
             vBoxMain.getChildren().add(menuBarMain);
             vBoxMain.getChildren().addAll(vBox.getChildren());
+            VeiculoController controller = fxmlLoader.getController();
+            controller.setVeiculoServices(new VeiculoServices());
+            controller.updateTableView();
+
 
         } catch (RuntimeException | IOException e) {
             Alerta.exibirAlerta("Error","Erro ao carregar a view",e.getMessage(), Alert.AlertType.ERROR);

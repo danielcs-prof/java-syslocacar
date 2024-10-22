@@ -10,10 +10,13 @@ module edu.syslocacar {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires jdk.compiler;
 
 
     opens edu.syslocacar.controller to javafx.fxml;
     exports edu.syslocacar;
+    exports edu.syslocacar.model.services;
+    exports edu.syslocacar.model.entity;
 
     exports edu.syslocacar.controller to javafx.fxml;
 }

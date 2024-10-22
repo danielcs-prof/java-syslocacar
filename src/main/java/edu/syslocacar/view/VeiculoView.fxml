@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox fx:id="vBoxVeiculo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.syslocacar.controller.VeiculoController">
    <children>
       <Label fx:id="lbVeiculo" text="Veículo">
@@ -32,7 +31,7 @@
         <columns>
           <TableColumn fx:id="columnIdVeiculo" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="columnMarcaVeiculo" prefWidth="75.0" text="Marca" />
-            <TableColumn prefWidth="75.0" text="Modelo" />
+            <TableColumn fx:id="columnModeloVeiculo" prefWidth="75.0" text="Modelo" />
             <TableColumn fx:id="columnPlacaVeiculo" prefWidth="75.0" text="Placa" />
             <TableColumn fx:id="columnStatusVeiculo" prefWidth="75.0" text="Status" />
         </columns>
