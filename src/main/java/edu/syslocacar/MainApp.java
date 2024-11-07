@@ -29,6 +29,7 @@ public class MainApp extends Application {
         ScrollPane scrollPane = (ScrollPane) scene.getRoot();
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
+
         stage.setTitle("SYSLocaCar!");
         stage.setScene(scene);
         stage.show();
@@ -36,6 +37,9 @@ public class MainApp extends Application {
 
     public static Scene getScene(){
         return  scene;
+    }
+    public static Stage getStage(){
+        return  stage;
     }
 
     public static void main(String[] args) {

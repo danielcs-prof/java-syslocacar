@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vBoxVeiculo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.syslocacar.controller.VeiculoController">
+<VBox fx:id="vBoxVeiculo" alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.syslocacar.controller.VeiculoController">
    <children>
       <Label fx:id="lbVeiculo" text="Veículo">
          <padding>
@@ -19,7 +19,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <ToolBar prefHeight="40.0" prefWidth="200.0">
+      <ToolBar>
         <items>
           <Button fx:id="btnNovo" mnemonicParsing="false" onAction="#onBtnNovoAction" prefHeight="25.0" prefWidth="60.0" text="Novo" />
         </items>
@@ -27,7 +27,7 @@
             <Insets />
          </VBox.margin>
       </ToolBar>
-      <TableView fx:id="tbVeiculo" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tbVeiculo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn fx:id="columnIdVeiculo" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="columnMarcaVeiculo" prefWidth="75.0" text="Marca" />

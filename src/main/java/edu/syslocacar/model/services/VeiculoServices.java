@@ -25,6 +25,15 @@ public class VeiculoServices {
         veiculoList.add( new Veiculo(2,"CHEVROLET","Celta","OMI-2408","locado"));
         veiculoList.add( new Veiculo(3,"FORD","Ford K","GMI-2407","disponível"));
         veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
 
         //veiculoList.forEach( (obj) -> System.out.println(obj.getId() +", "+ obj.getMarca()+", "+obj.getModelo() + ", " + obj.getPlaca() + ", "+obj.getStatus()));
 

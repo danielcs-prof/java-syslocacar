@@ -6,16 +6,15 @@ import edu.syslocacar.utils.Alerta;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,27 +22,27 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     @FXML
-    private ScrollPane scrollPaneMain;
+    ScrollPane scrollPaneMain;
     @FXML
-    private VBox vBoxMain;
+    VBox vBoxMain;
     @FXML
-    private MenuBar menuBarMain;
+    MenuBar menuBarMain;
     @FXML
-    private Menu menuCadastro;
+    Menu menuCadastro;
     @FXML
-    private Menu menuRelatorios;
+    Menu menuRelatorios;
     @FXML
-    private Menu menuHelp;
+    Menu menuHelp;
     @FXML
-    private MenuItem menuItemVeiculos;
+    MenuItem menuItemVeiculos;
     @FXML
-    private MenuItem menuItemLocacao;
+    MenuItem menuItemLocacao;
     @FXML
-    private MenuItem menuItemManutencao;
+    MenuItem menuItemManutencao;
     @FXML
-    private MenuItem menuItemRelatorioVeiculos;
+    MenuItem menuItemRelatorioVeiculos;
     @FXML
-    private MenuItem menuItemAbout;
+    MenuItem menuItemAbout;
 
     //******************************************************************************************************************
     // INITIALIZER
@@ -56,7 +55,6 @@ public class MainController implements Initializable {
     @FXML
     public void onCadastroVeiculoAction(){
         loadView("E:\\dev\\Projetos-Java\\syslocacar\\src\\main\\java\\edu\\syslocacar\\view\\VeiculoView.fxml");
-        System.out.println("menu veiculo");
     }
     @FXML
     public void onCadastroLocacaoAction(){
@@ -72,7 +70,6 @@ public class MainController implements Initializable {
     }
     @FXML
     public void onHelpAboutAction(){
-        System.out.println("menu About");
         Alerta.exibirAlerta("SYSLocaCar","About","SYSLocaCar V 1.0", Alert.AlertType.INFORMATION);
     }
     //******************************************************************************************************************
@@ -81,13 +78,15 @@ public class MainController implements Initializable {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             VBox vBox = fxmlLoader.load(new FileInputStream(pathFXML));
+
             vBoxMain.getChildren().clear();
             vBoxMain.getChildren().add(menuBarMain);
             vBoxMain.getChildren().addAll(vBox.getChildren());
+
             VeiculoController controller = fxmlLoader.getController();
             controller.setVeiculoServices(new VeiculoServices());
             controller.updateTableView();
-
+            controller.tbVeiculo.prefHeightProperty().bind(vBoxMain.heightProperty());
 
         } catch (RuntimeException | IOException e) {
             Alerta.exibirAlerta("Error","Erro ao carregar a view",e.getMessage(), Alert.AlertType.ERROR);
