@@ -8,13 +8,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import lombok.Getter;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 
 public class MainApp extends Application {
 
+    @Getter
     private static Scene scene;
+    @Getter
     private static Stage stage;
 
     @Override
@@ -33,13 +36,6 @@ public class MainApp extends Application {
         stage.setTitle("SYSLocaCar!");
         stage.setScene(scene);
         stage.show();
-    }
-
-    public static Scene getScene(){
-        return  scene;
-    }
-    public static Stage getStage(){
-        return  stage;
     }
 
     public static void main(String[] args) {

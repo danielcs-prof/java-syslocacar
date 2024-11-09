@@ -1,42 +1,31 @@
 package edu.syslocacar.model.services;
 
-import edu.syslocacar.model.entity.Marca;
-import edu.syslocacar.model.entity.Modelo;
 import edu.syslocacar.model.entity.Veiculo;
-import org.w3c.dom.ls.LSOutput;
+import edu.syslocacar.persistence.VeiculoDAO;
 
-import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class VeiculoServices {
-    public List<Veiculo> findAll(){
 
-        List<Veiculo> veiculoList = new ArrayList<>();
-        Marca marca = new Marca(1,"FORD");
-        Modelo modelo1 = new Modelo(1,"FORD RANGER");
-        modelo1.setMara(marca);
-        Modelo modelo2 = new Modelo(1,"FORD K");
-        modelo2.setMara(marca);
+    private VeiculoDAO veiculoDAO = new VeiculoDAO();
 
-        veiculoList.add( new Veiculo(1,"FORD","Ford Ranger","DMI-2409","locado"));
-        veiculoList.add( new Veiculo(2,"CHEVROLET","Celta","OMI-2408","locado"));
-        veiculoList.add( new Veiculo(3,"FORD","Ford K","GMI-2407","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
-        veiculoList.add( new Veiculo(4,"CHEVROLET","S10","KMI-2406","disponível"));
+    public void addVeiculo(Veiculo veiculo) {
+        veiculoDAO.save(veiculo);
+    }
 
-        //veiculoList.forEach( (obj) -> System.out.println(obj.getId() +", "+ obj.getMarca()+", "+obj.getModelo() + ", " + obj.getPlaca() + ", "+obj.getStatus()));
+    public List<Veiculo> getAllVeiculos() {
+        return veiculoDAO.findAll();
+    }
 
-        return veiculoList;
+    public Veiculo getVeiculoById(Long id) {
+        return veiculoDAO.findById(id);
+    }
+
+    public void updateVeiculo(Veiculo veiculo) {
+        veiculoDAO.update(veiculo);
+    }
+
+    public void removeVeiculo(Long id) {
+        veiculoDAO.delete(id);
     }
 }

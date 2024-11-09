@@ -27,7 +27,7 @@
             <Insets />
          </VBox.margin>
       </ToolBar>
-      <TableView fx:id="tbVeiculo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+      <TableView fx:id="tbVeiculo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#handleTableDoubleClick" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn fx:id="columnIdVeiculo" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="columnMarcaVeiculo" prefWidth="75.0" text="Marca" />

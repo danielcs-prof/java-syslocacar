@@ -92,19 +92,6 @@ public class MainController implements Initializable {
             Alerta.exibirAlerta("Error","Erro ao carregar a view",e.getMessage(), Alert.AlertType.ERROR);
         }
     }
-    public static void modalView(String title, String pathFXML){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent root = fxmlLoader.load(new FileInputStream(pathFXML));
-            Stage modal = new Stage();
-            modal.setTitle(title);
-            modal.setScene(new Scene(root));
-            modal.initModality(Modality.WINDOW_MODAL);
-            modal.initOwner(MainApp.getScene().getWindow());
-            modal.showAndWait();
-        } catch (RuntimeException | IOException e) {
-            Alerta.exibirAlerta("Error","Erro ao carregar a view",e.getMessage(), Alert.AlertType.ERROR);
-        }
-    }
+
 
 }

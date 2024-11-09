@@ -1,18 +1,28 @@
 package edu.syslocacar.model.entity;
 
+import jakarta.persistence.*;
+import lombok.Setter;
+
+@Entity
 public class Veiculo {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Setter
     private String marca;
+    @Setter
     private String modelo;
+    @Setter
     private String placa;
+    @Setter
     private String status;
 
     // CONSTRUTOR
     public Veiculo() {
     }
 
-    public Veiculo(Integer id, String marca, String modelo, String placa, String status) {
-        this.id = id;
+    public Veiculo( String marca, String modelo, String placa, String status) {
+
         this.marca = marca;
         this.modelo = modelo;
         this.placa = placa;
@@ -20,43 +30,24 @@ public class Veiculo {
     }
     // GET E SET
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getMarca() {
+     public String getMarca() {
         return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
     }
 
     public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
     public String getPlaca() {
         return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }
