@@ -57,11 +57,6 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btnAlterar" mnemonicParsing="false" onAction="#btnAlterarOnAction" prefHeight="30.0" prefWidth="80.0" text="Alterar">
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
-            </Button>
             <Button fx:id="btnExcluir" mnemonicParsing="false" onAction="#btnExcluirOnAction" prefHeight="30.0" prefWidth="80.0" text="Excluir">
                <HBox.margin>
                   <Insets />
