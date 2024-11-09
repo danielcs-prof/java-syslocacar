@@ -1,12 +1,10 @@
 package edu.syslocacar;
 
-import edu.syslocacar.controller.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import lombok.Getter;
 
@@ -17,8 +15,6 @@ public class MainApp extends Application {
 
     @Getter
     private static Scene scene;
-    @Getter
-    private static Stage stage;
 
     @Override
     public void start(Stage stage) throws IOException {
