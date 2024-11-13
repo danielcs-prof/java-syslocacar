@@ -22,7 +22,6 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        //String pathView = "C:\\Users\\danielcs\\IdeaProjects\\java-syslocacar\\src\\main\\java\\edu\\syslocacar\\view\\MainView.fxml";
 
         System.out.println(PathFXML.pathBase());
         FXMLLoader fxmlLoader = new FXMLLoader();

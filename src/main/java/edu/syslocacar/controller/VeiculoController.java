@@ -57,7 +57,6 @@ public class VeiculoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //this.pathVeiculo = "C:\\Users\\danielcs\\IdeaProjects\\java-syslocacar\\src\\main\\java\\edu\\syslocacar\\view\\VeiculoViewModal.fxml";
         iniciarGUI();
     }
     public void iniciarGUI(){
