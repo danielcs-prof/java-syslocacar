@@ -3,6 +3,7 @@ package edu.syslocacar.controller;
 import edu.syslocacar.MainApp;
 import edu.syslocacar.model.services.VeiculoServices;
 import edu.syslocacar.utils.Alerta;
+import edu.syslocacar.utils.PathFXML;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -54,7 +55,7 @@ public class MainController implements Initializable {
     // TRATAMENTO DE EVENTOS
     @FXML
     public void onCadastroVeiculoAction(){
-        loadView("E:\\dev\\Projetos-Java\\syslocacar\\src\\main\\java\\edu\\syslocacar\\view\\VeiculoView.fxml");
+        loadView("\\VeiculoView.fxml");
     }
     @FXML
     public void onCadastroLocacaoAction(){
@@ -74,10 +75,10 @@ public class MainController implements Initializable {
     }
     //******************************************************************************************************************
     // CARREGAMENTO DA VIEW
-    public void loadView(String pathFXML){
+    public void loadView(String arquivoFXML){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            VBox vBox = fxmlLoader.load(new FileInputStream(pathFXML));
+            VBox vBox = fxmlLoader.load(new FileInputStream(PathFXML.pathBase() + arquivoFXML));
 
             vBoxMain.getChildren().clear();
             vBoxMain.getChildren().add(menuBarMain);

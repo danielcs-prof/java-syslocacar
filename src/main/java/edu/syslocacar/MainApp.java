@@ -1,5 +1,6 @@
 package edu.syslocacar;
 
+import edu.syslocacar.utils.PathFXML;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,8 +9,11 @@ import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 import lombok.Getter;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class MainApp extends Application {
 
@@ -18,11 +22,13 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        String pathView = "E:\\dev\\Projetos-Java\\syslocacar\\src\\main\\java\\edu\\syslocacar\\view\\MainView.fxml";
+        //String pathView = "C:\\Users\\danielcs\\IdeaProjects\\java-syslocacar\\src\\main\\java\\edu\\syslocacar\\view\\MainView.fxml";
+
+        System.out.println(PathFXML.pathBase());
         FXMLLoader fxmlLoader = new FXMLLoader();
 
         //fxmlLoader.setRoot(scrollPaneMain);
-        Parent root = fxmlLoader.load(new FileInputStream(pathView));
+        Parent root = fxmlLoader.load(new FileInputStream(PathFXML.pathBase() + "\\MainView.fxml"));
         scene = new Scene(root, 800, 550);
 
         ScrollPane scrollPane = (ScrollPane) scene.getRoot();

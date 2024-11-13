@@ -4,6 +4,7 @@ import edu.syslocacar.MainApp;
 import edu.syslocacar.model.entity.Veiculo;
 import edu.syslocacar.model.services.VeiculoServices;
 import edu.syslocacar.utils.Alerta;
+import edu.syslocacar.utils.PathFXML;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -56,7 +57,7 @@ public class VeiculoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.pathVeiculo = "C:\\Users\\danielcs\\IdeaProjects\\java-syslocacar\\src\\main\\java\\edu\\syslocacar\\view\\VeiculoViewModal.fxml";
+        //this.pathVeiculo = "C:\\Users\\danielcs\\IdeaProjects\\java-syslocacar\\src\\main\\java\\edu\\syslocacar\\view\\VeiculoViewModal.fxml";
         iniciarGUI();
     }
     public void iniciarGUI(){
@@ -73,7 +74,7 @@ public class VeiculoController implements Initializable {
                 this.veiculo = tbVeiculo.getSelectionModel().getSelectedItem();
                 if(this.veiculo != null) {
                     System.out.println("Duplo clique em: " + this.veiculo.getPlaca());
-                    modalView("Veiculo",pathVeiculo);
+                    modalView("Veiculo","\\VeiculoViewModal.fxml");
                     updateTableView();
                 }
             }
@@ -82,10 +83,10 @@ public class VeiculoController implements Initializable {
     }
     //******************************************************************************************************************
     // MODAL VIEW
-    public void modalView(String title, String pathFXML){
+    public void modalView(String title, String arquivoFXML){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent root = fxmlLoader.load(new FileInputStream(pathFXML));
+            Parent root = fxmlLoader.load(new FileInputStream(PathFXML.pathBase() + arquivoFXML));
             VeiculoViewModalController controller = fxmlLoader.getController();
             controller.setVeiculoServices(new VeiculoServices());
             controller.setVeiculo(this.veiculo);
@@ -118,7 +119,7 @@ public class VeiculoController implements Initializable {
     @FXML
     public void onBtnNovoAction(){
         this.veiculo = null;
-        modalView("Manter Veiculos",pathVeiculo);
+        modalView("Manter Veiculos","\\VeiculoViewModal.fxml");
         updateTableView();}
 
 }
